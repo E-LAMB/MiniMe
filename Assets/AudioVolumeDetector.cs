@@ -9,10 +9,14 @@ public class AudioVolumeDetector : MonoBehaviour
 
     public float total_loudness;
 
+    public AudioClip microphoneClip;
+
+    public int mic_to_use;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Mic_To_Audio();
     }
 
     // Update is called once per frame
@@ -21,7 +25,18 @@ public class AudioVolumeDetector : MonoBehaviour
     
     }
 
-    public Void Mic_To
+    public void Mic_To_Audio()
+    {
+        string microphoneName = Microphone.devices[mic_to_use];
+        microphoneClip = Microphone.Start(microphoneName, true, 20, AudioSettings.outputSampleRate);
+    }
+
+    public float GetLoudnessFromMicClip()
+    {
+
+        return GetLoudnessFromAudioClip(Microphone.GetPosition(Microphone.devices[mic_to_use]), microphoneClip);
+
+    }
 
     public float GetLoudnessFromAudioClip(int clipPosition, AudioClip clip)
     {
