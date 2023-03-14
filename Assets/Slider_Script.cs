@@ -51,5 +51,9 @@ public class Slider_Script : MonoBehaviour
         {
             Mind.mind_hop_wait = extracted_value;
         }
+        if (value_to_change == 7)
+        {
+            Mind.boyancy_intensity = extracted_value;
+        }
     }
 }
