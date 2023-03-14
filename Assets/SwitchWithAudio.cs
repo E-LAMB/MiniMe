@@ -24,6 +24,10 @@ public class SwitchWithAudio : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        threshold = Mind.mind_threshold;
+        sensitivity = Mind.mind_intensity;
+
         float loudness = detector.GetLoudnessFromMicClip() * sensitivity;
 
         if (threshold > loudness)
