@@ -15,6 +15,8 @@ public class SwitchWithAudio : MonoBehaviour
     public GameObject image_one;
     public GameObject image_two;
 
+    public float showtime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,10 +35,18 @@ public class SwitchWithAudio : MonoBehaviour
         if (threshold > loudness)
         {
             loudness = 0;
-            should_switch = false;
         } else
         {
+            showtime = Mind.mind_linger;
+        }
+
+        if (showtime > 0f)
+        {
+            showtime -= Time.deltaTime;
             should_switch = true;
+        } else
+        {
+            should_switch = false;
         }
 
         if (should_switch)

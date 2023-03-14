@@ -35,5 +35,9 @@ public class Slider_Script : MonoBehaviour
         {
             Mind.mind_threshold = extracted_value;
         }
+        if (value_to_change == 3)
+        {
+            Mind.linger = extracted_value;
+        }
     }
 }

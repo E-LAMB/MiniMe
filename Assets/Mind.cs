@@ -7,5 +7,6 @@ public static class Mind
     
     public static float mind_threshold;
     public static float mind_intensity;
+    public static float mind_linger;
 
 }
