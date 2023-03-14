@@ -17,6 +17,11 @@ public class SwitchWithAudio : MonoBehaviour
 
     public float showtime;
 
+    public float time_since_spoken;
+    public float time_required_hop;
+
+    public HopScript my_hopper;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +31,9 @@ public class SwitchWithAudio : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        time_since_spoken += Time.deltaTime;
+
+        time_required_hop = Mind.mind_hop_wait;
 
         threshold = Mind.mind_threshold;
         sensitivity = Mind.mind_intensity;
@@ -38,6 +46,11 @@ public class SwitchWithAudio : MonoBehaviour
         } else
         {
             showtime = Mind.mind_linger;
+            if (time_since_spoken >= time_required_hop)
+            {
+                my_hopper.NewHop();
+            }
+            time_since_spoken = -0.05f;
         }
 
         if (showtime > 0f)

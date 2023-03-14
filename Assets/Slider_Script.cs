@@ -37,7 +37,19 @@ public class Slider_Script : MonoBehaviour
         }
         if (value_to_change == 3)
         {
-            Mind.linger = extracted_value;
+            Mind.mind_linger = extracted_value;
+        }
+        if (value_to_change == 4)
+        {
+            Mind.mind_hop_amount = extracted_value;
+        }
+        if (value_to_change == 5)
+        {
+            Mind.mind_hop_speed = extracted_value;
+        }
+        if (value_to_change == 6)
+        {
+            Mind.mind_hop_wait = extracted_value;
         }
     }
 }

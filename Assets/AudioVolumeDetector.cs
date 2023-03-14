@@ -27,14 +27,14 @@ public class AudioVolumeDetector : MonoBehaviour
 
     public void Mic_To_Audio()
     {
-        string microphoneName = Microphone.devices[mic_to_use];
+        string microphoneName = Microphone.devices[Mind.mic_to_use];
         microphoneClip = Microphone.Start(microphoneName, true, 20, AudioSettings.outputSampleRate);
     }
 
     public float GetLoudnessFromMicClip()
     {
 
-        return GetLoudnessFromAudioClip(Microphone.GetPosition(Microphone.devices[mic_to_use]), microphoneClip);
+        return GetLoudnessFromAudioClip(Microphone.GetPosition(Microphone.devices[Mind.mic_to_use]), microphoneClip);
 
     }
 
