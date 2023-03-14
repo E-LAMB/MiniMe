@@ -11,9 +11,10 @@ public class MicrophoneSlider : MonoBehaviour
     public float rounded_value;
     public int integer_value;
 
-    public TMPro.TextMeshProUGUI my_text;
-
     public UnityEngine.UI.Slider my_slider;
+
+    public string mic_message;
+    public TMPro.TextMeshProUGUI my_title;
 
     // Start is called before the first frame update
     void Start()
@@ -30,10 +31,16 @@ public class MicrophoneSlider : MonoBehaviour
         extracted_value = my_slider.value;
         rounded_value = Mathf.Round(extracted_value);
         integer_value = Mathf.RoundToInt(rounded_value);
-        my_text.text = rounded_value.ToString();
+
+        int pres_1 = integer_value += 1;
+        int pres_2 = Mind.maximum_mics += 1;
+
+        mic_message = "Microphone   (" + pres_1.ToString() + "/" + pres_2.ToString() + ")";
+        my_title.text = mic_message;
 
         if (value_to_change == 1)
         {
+            integer_value -= 1;
             Mind.mic_to_use = integer_value;
         }
     }
