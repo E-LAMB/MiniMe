@@ -9,6 +9,7 @@ public class Buttons : MonoBehaviour
     public string[] content_array;
 
     public GameObject loading_warning;
+    public UnityEngine.UI.Image loading_button;
 
     public char my_char;
 
@@ -42,6 +43,19 @@ public class Buttons : MonoBehaviour
 
     void Update()
     {
+
+        StreamReader reader = new StreamReader(Mind.file_path);
+        string def_content;
+        def_content = reader.ReadToEnd(); // Reads the content in the file
+        reader.Close();
+        if (def_content == "")
+        {
+            Mind.saved_data_avaliable = false;
+        } else
+        {
+            Mind.saved_data_avaliable = true;
+        }
+
         if (Mind.maximum_mics < Mind.mic_to_use)
         {
             Mind.mic_to_use = Mind.maximum_mics;
@@ -49,6 +63,7 @@ public class Buttons : MonoBehaviour
         Mind.maximum_mics = Microphone.devices.Length - 1;
 
         loading_warning.SetActive(!Mind.saved_data_avaliable);
+        if (Mind.saved_data_avaliable) {loading_button.color = Color.white;} else {loading_button.color = Color.black;}
     }
 
     public void butt_save_savedata()
@@ -75,16 +90,24 @@ public class Buttons : MonoBehaviour
             reader.Close();
             Debug.Log(content); 
 
-            content_array = content.Split(my_char);
+            if (content != "")
+            {
 
-            sli_th.value = float.Parse(content_array[0]);
-            sli_in.value = float.Parse(content_array[1]);
-            sli_li.value = float.Parse(content_array[2]);
-            sli_ht.value = float.Parse(content_array[3]);
-            tog_he.isOn = bool.Parse(content_array[4]);
-            sli_sp.value = float.Parse(content_array[5]);
-            sli_wt.value = float.Parse(content_array[6]);
-            sli_by.value = float.Parse(content_array[7]);
+                content_array = content.Split(my_char);
+
+                sli_th.value = float.Parse(content_array[0]);
+                sli_in.value = float.Parse(content_array[1]);
+                sli_li.value = float.Parse(content_array[2]);
+                sli_ht.value = float.Parse(content_array[3]);
+                tog_he.isOn = bool.Parse(content_array[4]);
+                sli_sp.value = float.Parse(content_array[5]);
+                sli_wt.value = float.Parse(content_array[6]);
+                sli_by.value = float.Parse(content_array[7]);
+
+            } else
+            {
+                Debug.Log("No Saved Data Found");
+            }
 
         } else
         {
