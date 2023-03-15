@@ -29,31 +29,31 @@ public class Slider_Script : MonoBehaviour
 
         if (value_to_change == 1)
         {
-            Mind.mind_intensity = extracted_value;
+            Mind.mind_intensity = rounded_value;
         }
         if (value_to_change == 2)
         {
-            Mind.mind_threshold = extracted_value;
+            Mind.mind_threshold = rounded_value;
         }
         if (value_to_change == 3)
         {
-            Mind.mind_linger = extracted_value;
+            Mind.mind_linger = rounded_value;
         }
         if (value_to_change == 4)
         {
-            Mind.mind_hop_amount = extracted_value;
+            Mind.mind_hop_amount = rounded_value;
         }
         if (value_to_change == 5)
         {
-            Mind.mind_hop_speed = extracted_value;
+            Mind.mind_hop_speed = rounded_value;
         }
         if (value_to_change == 6)
         {
-            Mind.mind_hop_wait = extracted_value;
+            Mind.mind_hop_wait = rounded_value;
         }
         if (value_to_change == 7)
         {
-            Mind.boyancy_intensity = extracted_value;
+            Mind.boyancy_intensity = rounded_value;
         }
     }
 }

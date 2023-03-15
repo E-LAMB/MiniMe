@@ -18,4 +18,9 @@ public static class Mind
     public static bool has_found_mic;
     public static int maximum_mics;
 
+    public static bool has_found_location;
+    public static bool file_pre_existed;
+    public static bool saved_data_avaliable;
+    public static string file_path;
+
 }
