@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class teaching : MonoBehaviour
 {
 
+    /*
+
     public int unwanted_items = 0;
     public int required_items = 10;
 
@@ -20,7 +22,7 @@ public class teaching : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision other) 
+    private void OnCollisionEnter(Collision collision) 
     {
         Destroy(collision.gameObject);
         unwanted_items += 1;    
@@ -43,4 +45,7 @@ public class teaching : MonoBehaviour
             SceneManager.LoadScene(next_level);
         }
     }
+
+    */
+    
 }

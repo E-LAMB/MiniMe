@@ -55,5 +55,9 @@ public class Slider_Script : MonoBehaviour
         {
             Mind.boyancy_intensity = rounded_value;
         }
+        if (value_to_change == 8)
+        {
+            Mind.chatter_intensity = rounded_value;
+        }
     }
 }

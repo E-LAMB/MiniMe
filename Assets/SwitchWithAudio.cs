@@ -62,6 +62,8 @@ public class SwitchWithAudio : MonoBehaviour
             should_switch = false;
         }
 
+        Mind.is_speaking = should_switch;
+
         if (should_switch)
         {
             image_one.SetActive(false);

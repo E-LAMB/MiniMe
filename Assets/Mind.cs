@@ -13,6 +13,9 @@ public static class Mind
     public static float mind_hop_speed;
     public static float mind_hop_wait;
     public static float boyancy_intensity;
+    public static float chatter_intensity;
+
+    public static bool is_speaking;
 
     public static int mic_to_use;
     public static bool has_found_mic;
