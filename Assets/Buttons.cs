@@ -11,6 +11,9 @@ public class Buttons : MonoBehaviour
     public GameObject loading_warning;
     public UnityEngine.UI.Image loading_button;
 
+    public GameObject hide_object;
+    public bool new_state = true;
+
     public char my_char;
 
     public UnityEngine.UI.Slider sli_th;
@@ -36,6 +39,7 @@ public class Buttons : MonoBehaviour
             Mind.file_pre_existed = File.Exists(Mind.file_path);
             if (!Mind.file_pre_existed) {File.Create(Mind.file_path);} else {Debug.Log("Exists!");}
             if (!Mind.file_pre_existed) {butt_save_savedata();} else {Mind.saved_data_avaliable = true;}
+            if (Mind.file_pre_existed) {butt_load_savedata();}
             Mind.has_found_location = true;
         }
 
@@ -43,6 +47,12 @@ public class Buttons : MonoBehaviour
 
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            new_state = !new_state;
+            hide_object.SetActive(new_state);
+        }
 
         StreamReader reader = new StreamReader(Mind.file_path);
         string def_content;

@@ -5,16 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene 1.unity
-    guid: d483d605b66f16e42a3aaf6056b06c9b
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 85150f0159405b047b5dd34ce6b76007
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/redfur.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/puppet.unity
+    guid: d483d605b66f16e42a3aaf6056b06c9b
   - enabled: 0
     path: Assets/Scenes/Splitters.unity
     guid: e48a8932fca251942b77ee166250155e
+  - enabled: 1
+    path: Assets/Scenes/mara.unity
+    guid: b24bdaee19337ec4391da8f08a1c26ce
   m_configObjects: {}
